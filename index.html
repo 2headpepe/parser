@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" />
+    <button id="button"></button>
+    <script>
+      const { chromium } = require("playwright");
+      (async () => {
+        const browser = await chromium.launch();
+        const context = await browser.newContext();
+        const page = await context.newPage();
+
+        await page.goto("https://www.tinkoff.ru/login/");
+
+        await page.waitForLoadState("networkidle");
+        console.log("hello");
+        await page.screenshot({ path: "firstpage.png" });
+        console.log("hello");
+        let a = prompt("Код с телефона:");
+      })();
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>

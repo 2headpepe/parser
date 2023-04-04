@@ -1,0 +1,14 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "npx live server .",
+    "update": "node index.js"
+  },
+  "dependencies": {
+    "playwright": "^1.32.1",
+    "prompt-sync": "^4.2.0"
+  }
+}
